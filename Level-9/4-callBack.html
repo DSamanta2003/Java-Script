@@ -6,6 +6,25 @@
     <title>Arrow function</title>
   </head>
   <body>
-    <script src="4-callBack.js"></script>
+    <script>
+      const callback = (arg) => {
+        console.log(arg);
+      };
+
+      const loadScript = (srcE, callback) => {
+        let sc = document.createElement("script");
+        sc.src = srcE;
+        sc.onload = () => callback("Harry");
+        //callback("Harry") is NOT executed immediately.
+        // Instead, this function is stored as the onload event handler.
+        
+        document.head.append(sc);
+      };
+
+      loadScript(
+        "https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js",
+        callback,
+      );
+    </script>
   </body>
 </html>

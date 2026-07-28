@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise All</title>
+  </head>
+  <body>
+    <script>
+      console.log("This is promises");
+
+      let prom1 = new Promise((resolve, reject) => {
+        let a = Math.random();
+        if (a < 0.5) {
+          reject("No ramndom number was not supporting you 1");
+        } else {
+          setTimeout(() => { 
+            resolve("Krishna 1");
+          }, 2000);
+        }
+      });
+
+      let prom2 = new Promise((resolve, reject) => {
+        let a = Math.random();
+        if (a < 0.5) {
+          reject("No ramndom number was not supporting you 2");
+        } else {
+          setTimeout(() => {
+            resolve("Krishna 2");
+          }, 2000);
+        }
+      });
+
+      // let p3 = Promise.all([prom1,prom2])
+      //Result- Waits for all promises. Rejects if any one rejects.
+
+      // let p3 = Promise.allSettled([prom1,prom2])
+      //Result- Waits for all promises and returns every result (fulfilled or rejected).
+
+      // let p3 = Promise.race([prom1,prom2])
+      //Result- Resolves with the first fulfilled promise.as soon as the first promise settles (resolve or reject).
+
+      let p3 = Promise.any([prom1, prom2]);
+      //Result- Resolves with the first fulfilled promise.Rejects only if all promises reject.
+
+      p3.then((a) => {
+        console.log(a);
+      }).catch((err) => {
+        console.log(err);
+      });
+
+      // let p3 = Promise.resolve("Krishna");
+      // let p = Promise.reject("Something went wrong");
+      // p3.then((value) => {
+      //   console.log(value);
+      // });
+    </script>
+  </body>
+</html>

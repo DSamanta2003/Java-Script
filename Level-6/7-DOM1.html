@@ -27,6 +27,7 @@
       <div class="box">Radha Rani3</div>
       <div class="box">Radha Rani4</div>
       <div class="box">Radha Rani5</div>
+      <p>Hello</p>
     </div>
     <script>
       let Krishna = document.getElementsByClassName("box");
@@ -41,17 +42,22 @@
       document.querySelectorAll(".box").forEach((ele) => {
         ele.style.color = "green";
       });
+
       //document.querySelector('.container').nodeName
-      //node name are eligible any type of nodes like comment div text
+      //always returns the tag name of the element for all node types (elements, document, text nodes, comments, etc)
 
       //document.querySelector('.container').tagName
-      //tagnames are eligible only for element means html property
+      //tagnames are only eligible for Html property
+
+      //const text = document.querySelector("p").firstChild;
+      // console.log(text.nodeName); o/p->#text
+      // console.log(text.tagName); o/p->undefined
 
       // document.querySelector('.container').textContent
 
-      //document.querySelector('.container').hidden = true 
-      // for hidden the selected element here container
-
+      //document.querySelector('.container').hidden 
+      // o/p = 'false' container not hidden
+      
     </script>
   </body>
 </html>

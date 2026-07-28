@@ -8,6 +8,8 @@
   <body>
     <script>
       //In max case let & const variable should be use insted of var bez those are block variable and var is global variable
+      let f = 30;
+      const m = 15;
       var a = 10;
       var b = 20;
       var c = "Hello world";
@@ -17,6 +19,18 @@
       const a1 = 15;
       // a1 = a1 + 1; modified is not alowed in const bez values should be fixed 
       console.log(a1);
+      
+      
+      function Ram(x){
+        const z = 20;
+        console.log(z+x);
+      }  
+      Ram(10)
+
+      //Here this W is global variable this means window.z = 40; 
+      w=40;
+      console.log(w+10);
+    
     </script>
   </body>
 </html>
