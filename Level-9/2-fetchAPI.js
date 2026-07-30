@@ -1,5 +1,6 @@
 async function getdata() {
   let x = await fetch("https://jsonplaceholder.typicode.com/todos/1");
+  //fetch API post request
   let data = await x.json();
   return data;
 }

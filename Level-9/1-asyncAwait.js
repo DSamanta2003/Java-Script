@@ -1,4 +1,5 @@
 async function getdata() {
+  //Simulate getting data fron server
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(455);
