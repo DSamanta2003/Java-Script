@@ -32,16 +32,16 @@
       });
 
       // let p3 = Promise.all([prom1,prom2])
-      //Result- Waits for all promises. Rejects if any one rejects.
+      //Result- Resolve all promise data. Rejects if any one rejects.
+
+      // let p3 = Promise.any([prom1, prom2]);
+      //Result- Resolves with the first fulfilled promise.Rejects only if all promises reject.
 
       // let p3 = Promise.allSettled([prom1,prom2])
       //Result- Waits for all promises and returns every result (fulfilled or rejected).
 
-      // let p3 = Promise.race([prom1,prom2])
-      //Result- Resolves with the first fulfilled promise.as soon as the first promise settles (resolve or reject).
-
-      let p3 = Promise.any([prom1, prom2]);
-      //Result- Resolves with the first fulfilled promise.Rejects only if all promises reject.
+      let p3 = Promise.race([prom1,prom2])
+      //Result- wait for the first fulfilled promise.as soon as the first promise settles (resolve or reject).
 
       p3.then((a) => {
         console.log(a);

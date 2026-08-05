@@ -16,15 +16,13 @@
         sc.src = srcE;
         sc.onload = () => callback("Harry");
         //callback("Harry") is NOT executed immediately.
-        // Instead, this function is stored as the onload event handler.
+        //Instead, this function is stored as the onload event handler.
         
         document.head.append(sc);
       };
 
       loadScript(
-        "https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js",
-        callback,
-      );
+        "https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js", callback );
     </script>
   </body>
 </html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Listner1</title>
+  </head>
+  <body>
+    <button id="btn">Click me to change</button>
+    <script>
+      //   let button = document.querySelector('#btn')
+      //   button.addEventListener('click',()=>{
+      //     document.querySelector('#btn').innerText = "Hi I am being clicked";
+      //   })
+      let button = document.querySelector("#btn");
+      button.addEventListener("contextmenu", () => {
+        alert("Don't right click please");
+      });
+
+      //for seeing to working this type any key in keyboard
+      document.addEventListener("keydown", (e) => {
+        console.log(e);
+        console.log(e.key, e.keyCode);
+      });
+    </script>
+  </body>
+</html>
