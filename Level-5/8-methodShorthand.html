@@ -25,6 +25,26 @@
         },
       };
       console.log(product.displayPrice());
+      class User {
+        constructor(name) {
+          this.name = name;
+        }
+        get name() {
+          return this._name;
+        }
+        set name(value) {
+          if (value.length < 4) {
+            console.log("Name is too short.");
+            return;
+          }
+          this._name = value;
+        }
+      }
+      let user1 = new User("John");
+      console.log(user1);
+      console.log(user1.name)
+      user1.name = "Harry";
+      console.log(user1);
     </script>
   </body>
 </html>
