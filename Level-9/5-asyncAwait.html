@@ -24,6 +24,8 @@
         console.log("Loading data");
 
         let data = await getdata();
+        //async doesn't mean "wait."
+        //await means: Pause this async function until this Promise settles.
 
         console.log(data);
 
