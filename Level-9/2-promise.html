@@ -9,6 +9,11 @@
     <script>
       console.log("This is promises");
 
+      //Promise is the constructor function/class provided by JavaScript.
+      //JavaScript's Promise constructor automatically calls this annonymous arrow operator function which another name is executor function of Promise
+      //new Promise() creates a Promise object
+      //console.log(prom1) - Promise { "Krishna" } Promise {"No ramndom number was not supporting you"}
+ 
       let prom1 = new Promise((resolve, reject) => {
         let a = Math.random();
         if (a < 0.5) {
