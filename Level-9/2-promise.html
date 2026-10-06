@@ -21,10 +21,12 @@
         }
       });
 
-      prom1.then((a) => {
-          console.log(a);
-        }).catch((err) => {
-          console.log(err);
+      //prom1 gives you a Promise, and .then() waits for that Promise to fulfill.
+      //resolve === result and reject === error
+      prom1.then((result) => {
+          console.log(result);
+        }).catch((error) => {
+          console.log(error);
         });
     </script>
   </body>
