@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise</title>
+  </head>
+  <body>
+    <script>
+      console.log("This is promises");
+
+      //Promise is the constructor function/class provided by JavaScript.
+      //JavaScript's Promise constructor automatically calls this annonymous arrow operator function which another name is executor function of Promise
+      //new Promise() creates a Promise object
+      //console.log(prom1) - Promise { "Krishna" } Promise {"No ramndom number was not supporting you"}
+      //let prom1 is just the variable name It's not the function which store Promise object
+ 
+      let prom1 = new Promise((resolve, reject) => {
+        let a = Math.random();
+        if (a < 0.5) {
+          reject("No ramndom number was not supporting you");
+        } else {
+          setTimeout(() => {
+            console.log("Yes I am done");
+            resolve("Krishna");
+          }, 2000);
+        }
+      });
+
+      //prom1 gives you a Promise, and .then() waits for that Promise to fulfill.
+      //resolve === result and reject === error
+      prom1.then((result) => {
+          console.log(result);
+        }).catch((error) => {
+          console.log(error);
+        });
+    </script>
+  </body>
+</html>

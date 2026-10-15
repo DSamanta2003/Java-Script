@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrow function</title>
+  </head>
+  <body>
+    <script>
+      // Simulating API calls with callbacks
+      function selectItem(item, callback) {
+        setTimeout(() => {
+          console.log(`Item selected: ${item}`);
+          callback(item);
+        }, 1000);
+      }
+
+      function createOrder(item, callback) {
+        setTimeout(() => {
+          console.log(`Order created for: ${item}`);
+          callback("OrderID_12345");
+        }, 1000);
+      }
+
+      function processPayment(orderId, callback) {
+        setTimeout(() => {
+          console.log(`Payment processed for order: ${orderId}`);
+          callback(true);
+        }, 1000);
+      }
+
+      function showSummary(paymentStatus, callback) {
+        setTimeout(() => {
+          if (paymentStatus) {
+            console.log("Summary: Order successfully placed!");
+            callback();
+          }
+        }, 1000);
+      }
+
+      // CALLBACK HELL STARTING
+      selectItem("Laptop", function (item) {
+        createOrder(item, function (orderId) {
+          processPayment(orderId, function (paymentStatus) {
+            showSummary(paymentStatus, function () {
+              console.log("All steps completed successfully.");
+              // Imagine catching errors here—you would need error handlers at every single level!
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
